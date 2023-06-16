@@ -7,10 +7,14 @@ const Details = () => {
 
   const { state } = useLocation();
 
+  const { strYoutube } = state;
+
+  const key = strYoutube.split('=')[1];
+
 
   return (
 
-    <div className=' bg-blue-gray-500 grid grid-cols-3 space-x-3 py-10'>
+    <div className=' bg-blue-gray-500 grid grid-cols-3 space-x-3 py-10 msm:grid-cols-1 mmd:grid-cols-2 '>
 
 
       <div className='  h-[400px] w-[450px] px-6 pt-9'>
@@ -26,7 +30,7 @@ const Details = () => {
       </div>
 
 
-      <div className='text-center py-9'>
+      <div className='text-center py-9 '>
 
         <h1 className='text-lg font-bold underline px-6 '>Ingredient</h1>
         <div className=' text-yellow-500'>
@@ -62,6 +66,8 @@ const Details = () => {
         <h1 className='text-lg font-bold underline  px-6 pt-9 '>Instructions</h1>
         <p className='text-yellow-500'>{state.strInstructions}</p>
       </div>
+
+      <iframe height="250px" width="500px" src={`https://www.youtube.com/embed/${key}?rel=0`} allowFullScreen allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"></iframe>
 
 
 
